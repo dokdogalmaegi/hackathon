@@ -68,8 +68,8 @@ router.post('/register', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   console.log(req.body);
   User.find({ $and: [{ id: req.body.id }, { pw: req.body.pw }] }, (err, user) => {
-    if (err) return res.render('register', { fail: "존재하지 않는 아이디입니다." });
-    if (user.length < 1) return res.error("찾아오는 계정이 초과했습니다.");
+    if (err) return console.error(err);
+    if (user.length < 1) return res.render('login_fail', { fail: "존재하지 않는 아이디입니다." });
     req.session.name = user[0].name;
     return res.redirect('/');
   })
