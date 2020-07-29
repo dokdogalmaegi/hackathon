@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>『』- 회원가입</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="wrap">
+        <section class="left_section">
+            <div class="register_box">
+                <div class="back_btn">
+                    <a href="login.html">
+                        <div class="back_btn_circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="back_icon" enable-background="new 0 0 40 40" viewBox="0 0 40 40" x="0px" y="0px" width="40px" height="40px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
+                                <g>
+                                    <path d="M 34.969 20.563 c 1.888 -1.458 3.3 -3.773 2.719 -7.438 c 0 0 -4.149 1.25 -6.917 4.387 c -2.28 -2.962 -8.825 -5.295 -12.142 -5.761 c -0.258 -2.041 1.438 -3.376 -0.154 -3.376 c -1.669 0 -4.884 0.854 -6.02 3.356 c -5.689 0.476 -9.856 2.447 -11.143 7.019 c -1.337 4.752 3.875 9.094 12.673 10.392 c 1.584 1.959 4.776 2.649 6.517 2.649 c 2.137 0 -0.838 -1.789 0.52 -4.396 c 3.8 -1.586 6.56 -3.599 9.643 -3.915 c 4.23 -0.434 7.022 4.52 7.022 4.52 C 38.269 24.336 36.856 22.021 34.969 20.563 Z M 8.104 20.792 c -0.817 0 -1.479 -0.662 -1.479 -1.479 c 0 -0.817 0.662 -1.479 1.479 -1.479 c 0.817 0 1.479 0.662 1.479 1.479 C 9.583 20.13 8.921 20.792 8.104 20.792 Z" />
+                                </g>
+                                </svg>
+                        </div>
+                        <span>Login</span>
+                    </a>
+                </div>
+                <div class="register_group">
+                    <h3 class="register_title">Register</h3>
+                    <form action="/register" method="POST" class="register">
+
+                        <div class="form_group field">
+                            <input type="text" class="form_field" placeholder="NAME" name="name" autocomplete="off" id='name' title="이름을 입력해주세요." required />
+                            <label for="name" class="form_label">NAME</label>
+                            <label for="name" class="form_line"></label>
+                            <span class="gray_text">이름을 입력해주세요.</span>
+                        </div>
+
+                        <div class="form_group field">
+                            <input type="text" class="form_field" placeholder="ID" name="id" autocomplete="off" id='id' title="아이디를 입력해주세요." required />
+                            <label for="id" class="form_label">ID</label>
+                            <label for="id" class="form_line"></label>
+                            <span class="gray_text">아이디를 입력해주세요.</span>
+                        </div>
+                        
+                        <div class="form_group field">
+                            <input type="password" class="form_field" placeholder="PASSWORD" name="pw" id='pw' title="비밀번호를 입력해주세요." autocomplete="off" required />
+                            <label for="pw" class="form_label">PASSWORD</label>
+                            <label for="pw" class="form_line"></label>
+                            <span class="gray_text">비밀번호를 입력해주세요.</span>
+                        </div>
+
+                        <button type="submit" class="registerBtn_design">
+                            <span>회원가입</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="right_section">
+            <div class="right_bg_box">
+                <div class="bg_img_box">
+                    <img src="img/png/bg.png" alt="bg_img">
+                    <img src="img/png/bg_ele.png" alt="turtle_img" class="turtle_img">
+                    <div class="burble burble1"></div>
+                    <div class="burble burble2"></div>
+                    <div class="burble burble3"></div>
+                    <div class="burble burble4"></div>
+                    <div class="burble burble5"></div>
+                    <div class="burble burble6"></div>
+                    <div class="burble burble7"></div>
+                    <div class="burble burble8"></div>
+                </div>
+            </div>
+            <footer>
+                <span>Copyright(C) 2020.TeamA.All rights reserved.</span>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>

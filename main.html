@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>『』- 메인</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script/jquery-1.12.3.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_wrap">
+                <div class="logo">
+                    <img src="img/main_logo.png" alt="">
+                </div>
+                <div class="login">
+                    <a href="login.html">
+                        <span>로그인</span>
+                    </a>
+                    <a href="register.html">
+                        <span>회원가입</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="section_box">
+            <section class="first_page">
+                <div class="first_wrap">
+                    <div class="first_text">
+                        <h4 class="main_title">당신의 파일을 공유해보세요!</h4>
+                        <h5 class="main_text">초보 개발자들을 위한 오픈소스 클라우드</h5>
+
+                    </div>
+                    <div class="first_img">
+                        <div class="circle_grp1">
+                            <img src="/img/png/firstpage.png" alt="fisrt_page_img" class="first_page_img">
+                        </div>
+                        <div class="circle_grp2"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="second_page">
+                <div class="second_wrap">
+                    <div class="create_btnDesign createBtn">
+                        <span>파일 업로드</span>
+                        <div class="create_effect"></div>
+                    </div>
+                    <div class="down_list">
+                        <div class="down_content">
+                            <img src="img/jpg/kt/js.jpg" alt="file img">
+                            <div class="down_bottom">
+                                <div class="down_text">
+                                    <h4 class="file_title">1번 파일</h4>
+                                    <div class="file_text">JS파일입니다.</div>
+                                </div>
+                                <a href="">
+                                    <button class="downBtn">
+                                        <svg version="1.1" id="downBtnIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+                                            <g>
+                                                <path d="M135.9,81.4l-12-12c-1.6-1.6-4.1-1.6-5.6,0L93.1,94.6c-1.5,1.5-4,0.4-4-1.7V8.5c0-2.6-2.1-4.7-4.7-4.7H66.7
+                                                    c-2.6,0-4.7,2.1-4.7,4.7v85.5c0,2.1-2.5,3.1-4,1.7L31.8,69.4c-1.6-1.6-4.1-1.6-5.6,0l-12,12c-1.6,1.6-1.6,4.1,0,5.6l58,58
+                                                    c0.8,0.8,1.8,1.2,2.8,1.2c1,0,2-0.4,2.8-1.2l58-58C137.4,85.5,137.4,83,135.9,81.4z"/>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop_create">
+                    <div class="closeBtn">
+                        <svg version="1.1" id="closeBtnIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+                            <g>
+                            	<path d="M93.4,75l33.1-33.1c1.9-1.9,1.9-4.9,0-6.7l-11.7-11.7c-1.9-1.9-4.9-1.9-6.7,0L75,56.6L41.9,23.6c-1.9-1.9-4.9-1.9-6.7,0
+                            		L23.6,35.2c-1.9,1.9-1.9,4.9,0,6.7L56.6,75l-33.1,33.1c-1.9,1.9-1.9,4.9,0,6.7l11.7,11.7c1.9,1.9,4.9,1.9,6.7,0L75,93.4l33.1,33.1
+                            		c1.9,1.9,4.9,1.9,6.7,0l11.7-11.7c1.9-1.9,1.9-4.9,0-6.7L93.4,75z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 class="upload_title">File Upload</h3>
+
+                    <form action="/writebox" method="POST" class="file_upload" enctype="multipart/form-data">
+                        <div class="form_group field">
+                            <input type="text" class="form_field" placeholder="Title" name="file_title" autocomplete="off" id='file_title' title="제목을 입력해 주세요." required />
+                            <label for="file_title" class="form_label">Title</label>
+                            <label for="file_title" class="form_line"></label>
+                            <span class="gray_text">제목을 입력해주세요.</span>
+                        </div>
+    
+                        <div class="form_group field">
+                            <input type="text" class="form_field" placeholder="Content" name="file_content" autocomplete="off" id='file_content' title="내용을 입력해 주세요." required />
+                            <label for="file_content" class="form_label">Content</label>
+                            <label for="file_content" class="form_line"></label>
+                            <span class="gray_text">간단한 설명을 입력해주세요.</span>
+                        </div>
+                        
+                        <div class="file_group">
+                            <input type="file" id="selectFile" required>
+                            <input type="text" value="파일선택" disabled="disabled" class="selectFilebox">
+                            <label for="selectFile" class="selectBtnDesign">
+                                <span>파일찾기</span>
+                                <div class="select_effect"></div>
+                            </label>
+                        </div>
+                        <button type="submit" class="uploadBtnDesign">
+                            <span>업로드</span>
+                            <div class="upload_effect"></div>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </section>
+        <footer>
+            <span>Copyright(C) 2020.TeamA.All rights reserved.</span>
+        </footer>
+    </div>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
