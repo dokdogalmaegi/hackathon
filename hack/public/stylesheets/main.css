@@ -32,6 +32,11 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .login button span{color:#ffffff; text-align:center; font-weight:bold;}
 .login button:hover{border-color:#5ccae6; background-color:#5ccae6;}
 
+.logout form { display: inline-block; }
+.logout button{padding:10px 30px; border:3px solid #ffffff; margin:0 10px; border-radius:25px; transition:background-color 0.4s, border-color 0.4s; background: transparent; cursor: pointer; }
+.logout button span{color:#ffffff; text-align:center; font-weight:bold;}
+.logout button:hover{border-color:#db5b4d; background-color:#db5b4d;}
+
 /* first_page */
 .first_text{display:flex; justify-content:center; flex-direction:column;}
 .first_img{display:flex; justify-content:center; align-items:center; position:relative;}

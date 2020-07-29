@@ -11,16 +11,20 @@
         <section class="left_section">
             <div class="login_box">
                 <div class="back_btn">
-                    <a href="main.html">
-                        <div class="back_btn_circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="back_icon" enable-background="new 0 0 40 40" viewBox="0 0 40 40" x="0px" y="0px" width="40px" height="40px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                                <g>
-                                    <path d="M 34.969 20.563 c 1.888 -1.458 3.3 -3.773 2.719 -7.438 c 0 0 -4.149 1.25 -6.917 4.387 c -2.28 -2.962 -8.825 -5.295 -12.142 -5.761 c -0.258 -2.041 1.438 -3.376 -0.154 -3.376 c -1.669 0 -4.884 0.854 -6.02 3.356 c -5.689 0.476 -9.856 2.447 -11.143 7.019 c -1.337 4.752 3.875 9.094 12.673 10.392 c 1.584 1.959 4.776 2.649 6.517 2.649 c 2.137 0 -0.838 -1.789 0.52 -4.396 c 3.8 -1.586 6.56 -3.599 9.643 -3.915 c 4.23 -0.434 7.022 4.52 7.022 4.52 C 38.269 24.336 36.856 22.021 34.969 20.563 Z M 8.104 20.792 c -0.817 0 -1.479 -0.662 -1.479 -1.479 c 0 -0.817 0.662 -1.479 1.479 -1.479 c 0.817 0 1.479 0.662 1.479 1.479 C 9.583 20.13 8.921 20.792 8.104 20.792 Z" />
-                                </g>
-                                </svg>
-                        </div>
-                        <span>Home</span>
-                    </a>
+                    <form action="home">
+                        <button>
+                        <a href="">
+                            <div class="back_btn_circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="back_icon" enable-background="new 0 0 40 40" viewBox="0 0 40 40" x="0px" y="0px" width="40px" height="40px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
+                                    <g>
+                                        <path d="M 34.969 20.563 c 1.888 -1.458 3.3 -3.773 2.719 -7.438 c 0 0 -4.149 1.25 -6.917 4.387 c -2.28 -2.962 -8.825 -5.295 -12.142 -5.761 c -0.258 -2.041 1.438 -3.376 -0.154 -3.376 c -1.669 0 -4.884 0.854 -6.02 3.356 c -5.689 0.476 -9.856 2.447 -11.143 7.019 c -1.337 4.752 3.875 9.094 12.673 10.392 c 1.584 1.959 4.776 2.649 6.517 2.649 c 2.137 0 -0.838 -1.789 0.52 -4.396 c 3.8 -1.586 6.56 -3.599 9.643 -3.915 c 4.23 -0.434 7.022 4.52 7.022 4.52 C 38.269 24.336 36.856 22.021 34.969 20.563 Z M 8.104 20.792 c -0.817 0 -1.479 -0.662 -1.479 -1.479 c 0 -0.817 0.662 -1.479 1.479 -1.479 c 0.817 0 1.479 0.662 1.479 1.479 C 9.583 20.13 8.921 20.792 8.104 20.792 Z" />
+                                    </g>
+                                    </svg>
+                            </div>
+                            <span>Home</span>
+                        </a>
+                    </button>
+                    </form>
                 </div>
                 <div class="login_group">
                     <h3 class="login_title">Login</h3>
@@ -42,7 +46,9 @@
                             <span>로그인</span>
                         </button>
                     </form>
-                    <a href="register.html" class="register_lnk" title="회원가입">계정이 없으신가요..?</a>
+                    <form action="register" method="GET">
+                        <button class="register_lnk">계정이 없으신가요..?</button>
+                    </form>
                 </div>
             </div>
         </section>

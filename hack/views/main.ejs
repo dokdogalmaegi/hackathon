@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>『』- 메인</title>
     <link rel="stylesheet" href="stylesheets/main.css">
-    <script src="script/jquery-1.12.3.js"></script>
+    <script src="javascripts/jquery-1.12.3.js"></script>
 </head>
+
 <body>
     <div class="wrap">
-        <header>
-            <div class="header_wrap">
-                <div class="logo">
-                    <img src="images/main_logo.png" alt="">
+        <% if(name != null) {%>
+            <header>
+                <div class="header_wrap">
+                    <div class="logo">
+                        <img src="images/main_logo.png" alt="logo_img">
+                    </div>
+                    <div class="logout">
+                        <form action="/logout" method="POST">
+                            <button type="submit">
+                                <span>로그아웃</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div class="login">
-                    <form action="/login">
-                        <button>
-                            <span>로그인</span>
-                        </button>
-                    </form>
-                    <form action="/register">
-                        <button>
-                            <span>회원가입</span>
-                        </button>
-                    </form>
+            </header>
+        <%}else {%>
+            <header>
+                <div class="header_wrap">
+                    <div class="logo">
+                        <img src="images/main_logo.png" alt="logo_img">
+                    </div>
+                    <div class="login">
+                        <form action="/login" method="GET">
+                            <button>
+                                <span>로그인</span>
+                            </button>
+                        </form>
+                        <form action="/register" method="GET">
+                            <button>
+                                <span>회원가입</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        <%}%>
         <section class="section_box">
             <section class="first_page">
                 <div class="first_wrap">
@@ -121,6 +140,6 @@
         </footer>
     </div>
 
-    <script src="script/main.js"></script>
+    <script src="javascripts/main.js"></script>
 </body>
 </html>

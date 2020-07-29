@@ -13,6 +13,41 @@
         <section class="left_section">
             <div class="register_box">
                 <div class="register_group">
+                    <% if(fail) {%>
+                        <h3 class="register_title_fail"><%= fail %></h3> 
+                        <form action="/register" method="POST" class="register">
+
+                            <div class="form_group field">
+                                <input type="text" class="form_field" placeholder="NAME" name="name" autocomplete="off"
+                                    id='name' title="이름을 입력해주세요." required />
+                                <label for="name" class="form_label">NAME</label>
+                                <label for="name" class="form_line"></label>
+                                <span class="gray_text">이름을 입력해주세요.</span>
+                            </div>
+    
+                            <div class="form_group field">
+                                <input type="text" class="form_field" placeholder="ID" name="id" autocomplete="off" id='id'
+                                    title="아이디를 입력해주세요." required />
+                                <label for="id" class="form_label">ID</label>
+                                <label for="id" class="form_line"></label>
+                                <span class="gray_text">아이디를 입력해주세요.</span>
+                            </div>
+    
+                            <div class="form_group field">
+                                <input type="password" class="form_field" placeholder="PASSWORD" name="pw" id='pw'
+                                    title="비밀번호를 입력해주세요." autocomplete="off" required />
+                                <label for="pw" class="form_label">PASSWORD</label>
+                                <label for="pw" class="form_line"></label>
+                                <span class="gray_text">비밀번호를 입력해주세요.</span>
+                            </div>
+    
+                            <form action="create_user">
+                                <button type="submit" class="registerBtn_design">
+                                    <span>회원가입</span>
+                                </button>
+                            </form>
+                        </form>  
+                    <%}else {%>
                     <h3 class="register_title">Register</h3>
                     <form action="/register" method="POST" class="register">
 
@@ -46,6 +81,7 @@
                             </button>
                         </form>
                     </form>
+                    <%}%>
                 </div>
             </div>
         </section>
