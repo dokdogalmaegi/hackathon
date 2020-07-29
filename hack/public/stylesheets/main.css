@@ -37,6 +37,13 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .logout button span{color:#ffffff; text-align:center; font-weight:bold;}
 .logout button:hover{border-color:#db5b4d; background-color:#db5b4d;}
 
+/* user */
+.user{display:flex; align-items:center; cursor:pointer; border-radius:40px; border:3px solid #ffffff; padding:7px 30px; margin-left:auto; margin-right:10px; transition:background-color 0.4s, border-color 0.4s;}
+.user svg{height:25px;}
+.user svg *{fill:#ffffff;}
+.user span{font-weight:bold; margin-left:10px;}
+.user:hover{border-color:#5ccae6; background-color:#5ccae6;}
+
 /* first_page */
 .first_text{display:flex; justify-content:center; flex-direction:column;}
 .first_img{display:flex; justify-content:center; align-items:center; position:relative;}
@@ -72,8 +79,6 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .down_text{width:100%;}
 .file_title{padding:5px 0; font-size:16px;}
 .file_text{padding:5px 0; font-size:14px; width:100%;}
-.down_content:hover .file_title{text-decoration:underline;}
-.down_content:hover .file_text{text-decoration:underline;}
 
 @keyframes downBtnAni{
     0%{opacity:0; top:-10px;}

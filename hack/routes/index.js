@@ -35,6 +35,11 @@ router.get('/register', (req, res, next) => {
   }
 })
 
+router.get('/download/:file', (req, res, next) => {
+  console.log(req.params.file);
+  res.download(`./uploads/${req.params.file}`);
+})
+
 router.post('/register', (req, res, next) => {
   let newUser = new User();
   User.exists({ id: req.body.id }, (err, isexists) => {
@@ -70,6 +75,25 @@ router.post('/logout', (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 })
+
+router.post('/writebox', (req, res, next) => {
+  console.log(req.files);
+  let newContent = new Content();
+  newContent.author = req.session.name;
+  newContent.title = req.body.file_title;
+  newContent.content = req.body.file_content;
+  newContent.file = req.files[0].originalname;
+  let extension = path.extname(req.files[0].originalname).substr(1, 5);
+  newContent.extension = extension;
+  newContent.save((err, content) => {
+    if(err) return console.error(err);
+    console.dir();
+    return res.redirect('/');
+  })
+  renameSync(`${process.cwd()}/uploads/${req.files[0].filename}`, `${process.cwd()}/uploads/${req.files[0].originalname}`);
+});
+
+
 
 router.get('/home', (req, res, next) => {
   res.redirect('/');

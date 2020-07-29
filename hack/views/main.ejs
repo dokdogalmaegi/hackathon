@@ -12,40 +12,55 @@
 <body>
     <div class="wrap">
         <% if(name != null) {%>
-            <header>
-                <div class="header_wrap">
-                    <div class="logo">
-                        <img src="images/main_logo.png" alt="logo_img">
-                    </div>
-                    <div class="logout">
-                        <form action="/logout" method="POST">
-                            <button type="submit">
-                                <span>로그아웃</span>
-                            </button>
-                        </form>
-                    </div>
+        <header>
+            <div class="header_wrap">
+                <div class="logo">
+                    <img src="images/main_logo.png" alt="logo_img">
                 </div>
-            </header>
+                <div class="user">
+                    <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
+                        style="enable-background:new 0 0 500 500;" xml:space="preserve">
+                        <g>
+                            <path class="st0"
+                                d="M462.3,440.5l-22.1-73.6c-10.3-34.5-35-65.3-69.9-87.5v0l-0.6-0.3c-14.4-6.9-32.3-6.7-46.9,0
+                                   c-19,8.7-41,13.8-64.5,13.8c-2.9,0-5.8-0.1-8.7-0.3c-2.9,0.2-5.8,0.3-8.7,0.3c-23.5,0-45.6-5-64.5-13.8c-14.5-6.7-32.5-6.8-46.9,0
+                                   l-0.6,0.3v0c-35,22.2-59.6,53-69.9,87.5l-22.1,73.6C33,453,44.9,465,61.2,465h188.3h188.3C454.1,465,466.1,453,462.3,440.5z" />
+                            <circle class="st0" cx="248.9" cy="142.2" r="106.8" />
+                        </g>
+                    </svg>
+                    <span><%= name %></span>
+                </div>
+                <div class="logout">
+                    <form action="/logout" method="POST">
+                        <button type="submit">
+                            <span>로그아웃</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </header>
         <%}else {%>
-            <header>
-                <div class="header_wrap">
-                    <div class="logo">
-                        <img src="images/main_logo.png" alt="logo_img">
-                    </div>
-                    <div class="login">
-                        <form action="/login" method="GET">
-                            <button>
-                                <span>로그인</span>
-                            </button>
-                        </form>
-                        <form action="/register" method="GET">
-                            <button>
-                                <span>회원가입</span>
-                            </button>
-                        </form>
-                    </div>
+        <header>
+            <div class="header_wrap">
+                <div class="logo">
+                    <img src="images/main_logo.png" alt="logo_img">
                 </div>
-            </header>
+                <div class="login">
+                    <form action="/login" method="GET">
+                        <button>
+                            <span>로그인</span>
+                        </button>
+                    </form>
+                    <form action="/register" method="GET">
+                        <button>
+                            <span>회원가입</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </header>
         <%}%>
         <section class="section_box">
             <section class="first_page">
@@ -63,6 +78,7 @@
                     </div>
                 </div>
             </section>
+            <% if(name != null) { %>
             <section class="second_page">
                 <div class="second_wrap">
                     <div class="create_btnDesign createBtn">
@@ -70,14 +86,17 @@
                         <div class="create_effect"></div>
                     </div>
                     <div class="down_list">
+                        <% for(let i = 0; i < data.length; i++) {%>
                         <div class="down_content">
-                            <img src="images/jpg/kt/js.jpg" alt="file img">
+                            <img src="images/jpg/kt/<%=data[i].extension%>.jpg" alt="file img">
+                            <h1><%= data.extension %></h1>
                             <div class="down_bottom">
                                 <div class="down_text">
-                                    <h4 class="file_title">1번 파일</h4>
-                                    <div class="file_text">JS파일입니다.</div>
+                                    <h4 class="file_title"><%= data[i].title %></h4>
+                                    <h4 class="file_title"><%= data[i].author %></h4>
+                                    <div class="file_text"><%= data[i].content %></div>
                                 </div>
-                                <a href="">
+                                <a href="<%='/download/' + data[i].file%>">
                                     <button class="downBtn">
                                         <svg version="1.1" id="downBtnIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
                                             <g>
@@ -90,6 +109,7 @@
                                 </a>
                             </div>
                         </div>
+                        <%}%>
                     </div>
                 </div>
                 <div class="pop_create">
@@ -120,7 +140,7 @@
                         </div>
                         
                         <div class="file_group">
-                            <input type="file" id="selectFile" required>
+                            <input type="file" id="selectFile" name="file" required>
                             <input type="text" value="파일선택" disabled="disabled" class="selectFilebox">
                             <label for="selectFile" class="selectBtnDesign">
                                 <span>파일찾기</span>
@@ -134,6 +154,7 @@
                     </form>
                 </div>
             </section>
+            <%}%>
         </section>
         <footer>
             <span>Copyright(C) 2020.TeamA.All rights reserved.</span>
