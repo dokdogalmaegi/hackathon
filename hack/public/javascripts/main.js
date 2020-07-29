@@ -21,10 +21,19 @@ function closeUpload(){
 function init(){
     createBtn.addEventListener('click',openUpload);
     closeBtn.addEventListener('click',closeUpload);
+    
+    $(".ext_chkList input").prop('checked', true);
 }
 
 init();
 
+function check(x) {
+    if(x.checked == true) {
+        $(`.${x.value}`).show();
+    }else {
+        $(`.${x.value}`).hide();
+    }
+}
 
 $(document).ready(function(){
     var fileTarget = $('#selectFile');
