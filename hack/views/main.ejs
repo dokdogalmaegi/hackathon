@@ -81,19 +81,46 @@
             <% if(name != null) { %>
             <section class="second_page">
                 <div class="second_wrap">
-                    <div class="create_btnDesign createBtn">
-                        <span>파일 업로드</span>
-                        <div class="create_effect"></div>
+                    <div class="second_top">
+                        <div class="create_btnDesign createBtn">
+                            <span>파일 업로드</span>
+                            <div class="create_effect"></div>
+                        </div>
                     </div>
                     <div class="down_list">
                         <% for(let i = 0; i < data.length; i++) {%>
                         <div class="down_content">
+                            <div class="down_top">
+                                <div class="down_by">
+                                    <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                    y="0px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+                                    <style type="text/css">
+                                        .st0{fill:#5ccae6;}
+                                        .st1{fill:#33bddd;}
+                                        .st2{fill:#FFFFFF;}
+                                    </style>
+                                    <g>
+                                        <path class="st0" d="M7,75c0,37.2,29.9,67.4,67,68V7C36.9,7.6,7,37.8,7,75z"/>
+                                    </g>
+                                    <g>
+                                        <path class="st1" d="M143,75c0-37.6-30.4-68-68-68c-0.3,0-0.7,0-1,0V143c0.3,0,0.7,0,1,0C112.6,143,143,112.6,143,75z"/>
+                                    </g>
+                                    <path class="st2" d="M107.2,107.8L94.9,91.4l-6-8c-1.1-1.5-3-2.1-4.8-1.6c-2.7,0.8-5.6,1.2-8.6,1.2c-3.3,0-6.4-0.5-9.2-1.4
+                                        c-1.8-0.6-3.7,0-4.8,1.6l-6.2,8.2l-12.4,16.4c-2.8,3.7-0.5,8.5,4.9,9.9h0c17.7,4.6,36.9,4.6,54.7,0h0
+                                        C107.7,116.3,110.1,111.6,107.2,107.8z"/>
+                                    <path class="st2" d="M75,33c-11.3,0-20.5,9.2-20.5,20.5c0,7.6,4.1,14.2,10.2,17.7c3,1.8,6.6,2.8,10.4,2.8c3.6,0,6.9-0.9,9.8-2.5
+                                        c6.4-3.5,10.7-10.3,10.7-18C95.5,42.2,86.3,33,75,33z"/>
+                                    </svg>
+                                <span><%= data[i].author %></span>
+                            </div>
+                            <div class="extension_label"><%= data[i].extension %></div>
+                            </div>
                             <img src="images/jpg/kt/<%=data[i].extension%>.jpg" alt="file img">
-                            <h1><%= data.extension %></h1>
                             <div class="down_bottom">
                                 <div class="down_text">
+                                    <div class="small_title">제목</div>
                                     <h4 class="file_title"><%= data[i].title %></h4>
-                                    <h4 class="file_title"><%= data[i].author %></h4>
+                                    <div class="small_title">내용</div>
                                     <div class="file_text"><%= data[i].content %></div>
                                 </div>
                                 <a href="<%='/download/' + data[i].file%>">
