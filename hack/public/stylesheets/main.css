@@ -58,7 +58,13 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 }
 
 
-/* second_page */
+/* extension_box */
+.second_top{display:flex; align-items:center; flex-wrap:wrap;}
+    /* extension_check */
+.ext_chkList{display:flex; flex-wrap:wrap; margin-top:10px;}
+.ext_chkList input{display:none;}
+.ext_chkList label{padding:10px 20px; background-color:#f3f3f3; margin:0 5px 5px 0; border-radius:5px; user-select:none; cursor:pointer; transition:background-color 0.2s, color 0.2s; font-family:Century Gothic, sans-serif;}
+.ext_chkList input.ext_chk:checked + label{background-color:#059bc0; color:#ffffff;}
     /* button */
 .create_btnDesign{padding:20px 40px; background-color:#5ccae6; border-radius:5px; display:inline-block; position:relative; overflow:hidden; cursor:pointer; user-select:none;}
 .create_btnDesign span{color:#ffffff; text-align:center; font-size:14px; position:relative; z-index:10;}
@@ -87,6 +93,8 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .file_title{font-size:16px; color:#2e2e2e;}
 .file_text{font-size:14px; width:100%;}
 .small_title{font-size:12px; color:#ffffff; background-color:#5ccae6; display:inline-block; padding:5px 10px; text-align:center; border-radius:20px; margin:10px 0 5px 0;}
+
+
 
 @keyframes downBtnAni{
     0%{opacity:0; top:-10px;}
