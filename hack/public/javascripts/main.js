@@ -27,6 +27,16 @@ function init(){
 
 init();
 
+function select() {
+    $(".ext_chkList input").prop('checked', true);
+    $('.down_content').show();
+}
+
+function cancel() {
+    $(".ext_chkList input").prop('checked', false);
+    $('.down_content').hide();
+}
+
 function check(x) {
     if(x.checked == true) {
         $(`.${x.value}`).show();

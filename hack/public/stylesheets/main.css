@@ -18,7 +18,7 @@ header{width:100%; padding:15px 20px; background-color:#a0deee; color:#ffffff; d
 
 
 section.section_box{width:100%; height:auto; background-color:#ffffff; display:flex; flex-direction:column;}
-section.section_box>section{display:flex; justify-content:center; align-items:center;}
+section.section_box>section{display:flex; justify-content:center; align-items:center; overflow:hidden;}
 section .first_page{width:100%; height:100vh; background-color:#ffffff; position:relative; border-bottom:1px solid #dbdbdb;}
 .first_wrap{width:1500px; height:100%; padding:110px 50px; display:flex; justify-content:space-between;}
 section .second_page{width:100%; height:auto; background-color:#fafafa; position:relative;}
@@ -41,7 +41,7 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .user{display:flex; align-items:center; cursor:pointer; border-radius:40px; border:3px solid #ffffff; padding:7px 30px; margin-left:auto; margin-right:10px; transition:background-color 0.4s, border-color 0.4s;}
 .user svg{height:25px;}
 .user svg *{fill:#ffffff;}
-.user span{font-weight:bold; margin-left:10px;}
+.user span{font-weight:bold; margin-left:10px;font-size:14px;}
 .user:hover{border-color:#5ccae6; background-color:#5ccae6;}
 
 /* first_page */
@@ -71,6 +71,16 @@ section .second_page{width:100%; height:auto; background-color:#fafafa; position
 .create_btnDesign span{color:#ffffff; text-align:center; font-size:14px; position:relative; z-index:10;}
 .create_effect{width:100%; height:50%; background-color:#059bc0; position:absolute; top:100%; left:50%; transform:translateX(-50%); opacity:0; transition:0.4s;}
 .create_btnDesign:hover .create_effect{top:50%; opacity:0.2;}
+
+.select_btnDesign{padding:20px 40px; background-color:#5ccae6; border-radius:5px; display:inline-block; position:relative; overflow:hidden; cursor:pointer; user-select:none; margin-left: 10px; }
+.select_btnDesign span{color:#ffffff; text-align:center; font-size:14px; position:relative; z-index:10;}
+.select_effect{width:100%; height:50%; background-color:#059bc0; position:absolute; top:100%; left:50%; transform:translateX(-50%); opacity:0; transition:0.4s;}
+.select_btnDesign:hover .select_effect{top:50%; opacity:0.2;}
+
+.cancel_btnDesign{padding:20px 40px; background-color:#5ccae6; border-radius:5px; display:inline-block; position:relative; overflow:hidden; cursor:pointer; user-select:none; margin-left: 10px; }
+.cancel_btnDesign span{color:#ffffff; text-align:center; font-size:14px; position:relative; z-index:10;}
+.cancel_effect{width:100%; height:50%; background-color:#059bc0; position:absolute; top:100%; left:50%; transform:translateX(-50%); opacity:0; transition:0.4s;}
+.cancel_btnDesign:hover .cancel_effect{top:50%; opacity:0.2;}
 
     /* down_list */
 .down_list{width:100%; height:auto; display:flex; flex-wrap:wrap; padding:0 40px;}
@@ -140,3 +150,16 @@ input#selectFile{display:none;}
 .uploadBtnDesign .upload_effect{width:100%; height:50%; background-color:#059bc0; position:absolute; top:100%; left:50%; transform:translateX(-50%); opacity:0; transition:0.4s;}
 .uploadBtnDesign:hover .upload_effect{top:50%; opacity:0.2;}
 
+@media(max-width:425px){
+    .circle_grp1{transform:scale(0.7);}
+    .circle_grp1 img{z-index:0; opacity:0.6;}
+    .main_title{position:relative; z-index:5; font-size:40px; color:#222222; background-color:#ffffff5d; padding:10px;}
+    .main_text{position:relative; z-index:5; font-size:18px;}
+    .first_wrap{padding:110px 40px;}
+
+    .second_top{display:flex; align-items:center; flex-wrap:wrap; width:100%; padding:0 50px;}
+    .ext_chkList{display:flex; flex-wrap:wrap; margin-top:10px; width:100%; justify-content:flex-start;}
+    .create_btnDesign{padding:10px;}
+    .cancel_btnDesign{padding:10px;}
+    .select_btnDesign{padding:10px;}
+}
