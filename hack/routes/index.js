@@ -1,18 +1,14 @@
 const express = require('express');
 const session = require('express-session');
-const { equal } = require('assert');
 const router = express.Router();
-const multer = require('multer');
 const path = require('path');
-const mongoose = require('mongoose');
 const User = require('../models/user');
 const Content = require('../models/content');
-const { emitWarning } = require('process');
-const { fstat, readFile, renameSync } = require('fs');
+const { renameSync } = require('fs');
 
 // GET main page.
 router.get('/', function(req, res, next) {
-  Content.find((err, content) => {
+  Content.find((err, content) => { // Content list load
     if (err) return console.error(err);
     JSON.stringify(content)
     return res.render('main', {name: req.session.name, data: content });
@@ -21,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 // GET login page.
 router.get('/login', (req, res, next) => {
-  if (req.session) { // session의 값이 null or undefined 확인
+  if (req.session) { // session value check
     res.render('login');
   } else {
     res.render('main');
@@ -48,9 +44,8 @@ router.post('/register', (req, res, next) => {
   let newUser = new User();
   User.exists({ id: req.body.id }, (err, isexists) => {
     if (isexists) return res.render('register', { fail: "아이디가 중복입니다." })
-    newUser.id = req.body.id;
-    newUser.pw = req.body.pw;
-    newUser.name = req.body.name;
+    let {id, pw, name} = req.body; // Destructuring Assignment
+    newUser.id = id; newUser.pw = pw; newUser.name = name; 
     if (newUser.id && newUser.pw && newUser.name) {
       newUser.save((err, user) => {
         if (err) return console.error(err);
@@ -86,13 +81,12 @@ router.post('/logout', (req, res, next) => {
 router.post('/writebox', (req, res, next) => {
   console.log(req.files);
   let newContent = new Content();
-  newContent.author = req.session.name;
-  newContent.title = req.body.file_title;
-  newContent.content = req.body.file_content;
+  let {name : author, file_title : title, file_content : content} = req.body; // Destructuring Assignment
+  newContent.author = author; newContent.title = title; newContent.content = content; // New content table DataBase Property Setting
   newContent.file = req.files[0].originalname;
-  let extension = path.extname(req.files[0].originalname).substr(1, 5);
+  let extension = path.extname(req.files[0].originalname).substr(1, 5); // File Extension
   newContent.extension = extension;
-  newContent.save((err, content) => {
+  newContent.save((err, content) => { // Table save
     if(err) return console.error(err);
     console.dir();
     return res.redirect('/');
