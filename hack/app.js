@@ -57,7 +57,7 @@ app.use(function(err, req, res, next) {
 const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', () => {
-  console.log("Connected to mongod servver");
+  console.log("Connected to mongoDB server");
 });
 
 mongoose.connect('mongodb://localhost/user_data');

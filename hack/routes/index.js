@@ -102,33 +102,45 @@ router.get('/home', (req, res, next) => {
 
 
 
-router.post('/userinfo', (req, res, next) => { // 유저 정보 받아오기
+router.post('/userInfo', (req, res, next) => { // 유저 정보 받아오기
   User.find((err, user) => {
     if (err) return console.error(err);
     return res.json(user);
   });
 })
 
-router.post('/contentlog', (req, res, next) => { // 게시판 정보 받아오기
+router.post('/contentLog', (req, res, next) => { // 게시판 정보 받아오기
   Content.find((err, content) => {
     if (err) return console.error(err);
     return res.json(content);
   });
 })
 
-router.post('/userinfo/delete', (req, res, next) => { // user정보 관리 (삭제)
+router.post('/userInfo/delete', (req, res, next) => { // user정보 관리 (삭제)
   User.remove({ $and: [{ id: req.body.id }, { pw: req.body.pw }, { name: req.body.name }] }, (err, user) => {
     if (err) return console.error(err);
     return res.json(user);
   });
 })
 
-router.post('/contentlog/delete', (req, res, next) => { // 게시판 정보 관리 (삭제)
+router.post('/userInfo/deleteAll', (req, res, next) => {
+  User.remove({}, (err, user) => {
+    return err ? console.error(err) : res.json(user);
+  })
+});
+
+router.post('contentLog/deleteAll', (req, res, next) => {
+  Content.remove({}, (err, content) => {
+    return err ? console.error(err) : res.json(content);
+  });
+})
+
+router.post('/contentLog/delete', (req, res, next) => { // 게시판 정보 관리 (삭제)
   Content.remove({ title: req.body.title }, (err, content) => {
     if (err) return console.error(err);
     return res.json(content);
-  })
-})
+  });
+});
 
 
 
